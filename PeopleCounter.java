@@ -49,13 +49,15 @@ public class PeopleCounter {
 	synchronized public void personLeft() {
 		peopleInside.getAndDecrement();
 		peopleLeft.getAndIncrement();
-		
+		notifyAll();
 	}
 	//too many people inside
 	synchronized public boolean overCapacity() {
-		if(peopleInside.get()>=maxPeople.get())
+		if(peopleInside.get()>=maxPeople.get()) {
 			return true;
-		return false;
+		}
+		else
+			return false;
 	}
 	
 	//not used
