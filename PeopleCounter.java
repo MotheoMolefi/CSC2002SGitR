@@ -46,10 +46,12 @@ public class PeopleCounter {
 	}
 
 	//someone left
-	synchronized public void personLeft() { //synchronized accordingly
-		peopleInside.getAndDecrement();
-		peopleLeft.getAndIncrement();
-		notifyAll(); // wakes up all the threads blocked on the condition variable.
+	public void personLeft() { //synchronized accordingly
+		synchronized (this){
+			peopleInside.getAndDecrement();
+			peopleLeft.getAndIncrement();
+			this.notifyAll(); // wakes up all the threads blocked on the condition variable.
+		}
 	}
 	//too many people inside
 	synchronized public boolean overCapacity() {
