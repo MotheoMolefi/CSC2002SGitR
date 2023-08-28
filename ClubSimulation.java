@@ -68,8 +68,8 @@ public class   ClubSimulation {
 		// add the listener to the jbutton to handle the "pressed" event
 		startB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)  {
+				// Decrements the count of the latch. Release threads.
 				Clubgoer.startLatch.countDown();
-				// THIS DOES NOTHING - MUST BE FIXED
 			}
 		});
 
@@ -79,8 +79,8 @@ public class   ClubSimulation {
 		// add the listener to the jbutton to handle the "pressed" event
 		pauseB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//Toggle flag for (true/false)
 				Clubgoer.pausePressed.set(!Clubgoer.pausePressed.get());
-				// THIS DOES NOTHING - MUST BE FIXED
 			}
 		});
 

@@ -81,23 +81,6 @@ public class ClubGrid {
 		myLocation.setLocation(entrance);
 		myLocation.setInRoom(true);
 		return entrance;
-
-		/*if (!counter.overCapacity())
-		{
-			entrance.get(myLocation.getID());
-			counter.personEntered(); //add to counter
-			myLocation.setLocation(entrance);
-			myLocation.setInRoom(true);
-		}
-		else
-		{
-			while(counter.overCapacity()){
-				wait();
-			}
-		}
-
-		 */
-
 	}
 	
 	
@@ -135,12 +118,6 @@ public class ClubGrid {
 			myLocation.setInRoom(false);
 			this.notifyAll(); // Use the ClubGrid object for synchronization
 		}
-			/*currentBlock.release();
-			counter.personLeft(); //add to counter
-			myLocation.setInRoom(false);
-			entrance.notifyAll();
-
-			 */
 	}
 
 	public GridBlock getExit() {

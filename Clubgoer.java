@@ -59,15 +59,11 @@ public class Clubgoer extends Thread {
 		while (pausePressed.get()) {
 			Thread.sleep(100); // Sleep for a short duration while waiting for resume
 		}
-
-		// THIS DOES NOTHING - MUST BE FIXED
-
 	}
 
 	private void startSim() throws InterruptedException {
+		// Waits until the latch has counted down to zero
 		startLatch.await();
-		// THIS DOES NOTHING - MUST BE FIXED
-
 	}
 
 	//get drink at bar
